@@ -23,23 +23,48 @@
 
     // Styled
 
+    console.log('%c i am a great text', 'font-size: 50px')
+
     // warning!
 
     // Error :|
+    console.error('shit')
 
     // Info
+    console.info('I am Elsa')
+
 
     // Testing
+      console.assert(1 === 2, 'that is wrong')
+
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
 
     // Grouping together
+    dogs.forEach( dog => {
+      console.group(`${dog.name}`);
+      console.log(`${dog.name} is $dog `)
+      console.groupEnd(`${dog.name}`);
+      // statements
+    });
 
     // counting
 
+    console.count('elsa');
+    console.count('elsa');
+    console.count('elsa');
+
     // timing
+
+    console.time('fetching data');
+    fetch('')
+    console.timeEnd('fetching data');
 
   </script>
 </body>

@@ -99,6 +99,51 @@
   </div>
 
 <script>
+
+  // if you press shift (event keycode listener), you need to transforme the upper
+
+  let lastChecked;
+
+  function handleCheck(e) {
+
+    // check if they had the shift key down
+    // AND check that they are checking in
+    let inBetween = false;
+
+
+
+    if (e.shiftKey && this.checked) {
+      checkboxes.forEach( checkbox => {
+        console.log(checkbox)
+
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween
+          console.log('hello')
+        }
+
+        if (inBetween) {
+          checkbox.checked = true;
+        }
+      })
+    }
+    lastChecked = this;
+  }
+
+      // loop through every sing checkbox and look for the first one that was checked and check every input that are between the first and last
+
+  checkboxes = document.querySelectorAll('.inbox input[ type="checkbox"]')
+
+  checkboxes.forEach( checkbox => {
+     checkbox.addEventListener('click', handleCheck )
+   })
+      // event => {
+      //   if (event.keyCode == 16) {
+      //     console.log('hello')
+      //   }
+
+    // statements
+    // });
+
 </script>
 </body>
 </html>
